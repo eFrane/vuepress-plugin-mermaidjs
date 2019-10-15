@@ -9,13 +9,13 @@ This [Vuepress][0] plugin provides a global component wrapping [mermaid.js][1].
 You can install it with
 
 ``` shell
-yarn add -D @efrane/vuepress-plugin-mermaidjs
+yarn add -D vuepress-plugin-mermaidjs
 ```
 
 or
 
 ``` shell
-npm install --save-dev @efrane/vuepress-plugin-mermaidjs
+npm install --save-dev vuepress-plugin-mermaidjs
 ```
 
 Then you just need to register the plugin in your `.vuepress/config.js`:
@@ -24,7 +24,7 @@ Then you just need to register the plugin in your `.vuepress/config.js`:
 module.exports = {
     // ...
     plugins: [
-        '@efrane/vuepress-plugin-mermaidjs'
+        'vuepress-plugin-mermaidjs'
     ]
     // ...
 }

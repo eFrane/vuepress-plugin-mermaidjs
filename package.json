@@ -1,5 +1,5 @@
 {
-  "name": "@efrane/vuepress-plugin-mermaidjs",
+  "name": "vuepress-plugin-mermaidjs",
   "version": "1.0.0",
   "description": "A Vuepress plugin providing easy MermaidJS diagramming",
   "main": "index.js",
@@ -16,5 +16,6 @@
   ],
   "dependencies": {
     "mermaid": "^8.3.1"
-  }
+  },
+  "private": false
 }
