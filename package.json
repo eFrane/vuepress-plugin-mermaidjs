@@ -1,0 +1,20 @@
+{
+  "name": "@efrane/vuepress-plugin-mermaidjs",
+  "version": "1.0.0",
+  "description": "A Vuepress plugin providing easy MermaidJS diagramming",
+  "main": "index.js",
+  "repository": "https://github.com/eFrane/vuepress-plugin-mermaidjs",
+  "author": "Stefan \"eFrane\" Graupner <efrane@meanderingsoul.com>",
+  "license": "MIT",
+  "keywords": [
+    "documentation",
+    "vue",
+    "vuepress",
+    "mermaid",
+    "diagrams",
+    "plugin"
+  ],
+  "dependencies": {
+    "mermaid": "^8.3.1"
+  }
+}
