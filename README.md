@@ -2,7 +2,7 @@
 
 > Use mermaid.js Diagrams in Vuepress
 
-This [Vuepress][0] plugin provides a global component wrapping [mermaid.js][1].
+This [Vuepress][1] plugin provides a global component wrapping [mermaid.js][2].
 
 ## Installation
 
@@ -42,3 +42,6 @@ mermaid-->isAwesome
 isAwesome-->mermaid
 </mermaid>
 ```
+
+[1]: https://vuepress.vuejs.org
+[2]: https://mermaidjs.github.io
