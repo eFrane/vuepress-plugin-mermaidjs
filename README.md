@@ -1,8 +1,9 @@
-# Vuepress Plugin for mermaid.js
+# VuePress Plugin for mermaid.js
 
-> Use mermaid.js Diagrams in Vuepress
+> Use mermaid.js Diagrams in VuePress
 
-This [Vuepress][1] plugin provides a global component wrapping [mermaid.js][2].
+This [VuePress][1] plugin provides a global component wrapping [mermaid.js][2].
+The plugin is designed to work with VuePress v1.x.
 
 ## Installation
 
