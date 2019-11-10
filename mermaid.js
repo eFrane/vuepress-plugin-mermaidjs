@@ -1,5 +1,5 @@
-// Since this plugin can ben used by multiple times, we need to
-// give each generated files a uid or the previous file would be
+// Since this plugin's component can be used by multiple times, we need to
+// give each generated diagram a uid or the previous diagram would be
 // overwritten.
 let graphIdCounter = 0
 
