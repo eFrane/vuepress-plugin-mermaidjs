@@ -21,7 +21,7 @@ const Mermaid = {
     },
     methods: {
         renderSVG () {
-            import('mermaid/dist/mermaid.min').then(mermaid => {
+            import('mermaid/dist/mermaid').then(mermaid => {
                 mermaid.initialize({ startOnLoad: true })
 
                 let renderDiv = document.createElement('div')
