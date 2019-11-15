@@ -6,6 +6,7 @@
   "repository": "https://github.com/eFrane/vuepress-plugin-mermaidjs",
   "author": "Stefan \"eFrane\" Graupner <efrane@meanderingsoul.com>",
   "license": "MIT",
+  "website": "http://vuepress-plugin-mermaidjs.efrane.com",
   "keywords": [
     "documentation",
     "vue",
