@@ -44,5 +44,7 @@ isAwesome-->mermaid
 </mermaid>
 ```
 
+**Extended documentation may be found at [vuepress-plugin-mermaidjs.efrane.com](https://vuepress-plugin-mermaidjs.efrane.com)**
+
 [1]: https://vuepress.vuejs.org
 [2]: https://mermaidjs.github.io
