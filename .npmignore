@@ -2,5 +2,6 @@ node_modules/
 .DS_Store
 .gitignore
 .git/
-yarn-lock
+yarn.lock
+docs
 yarn-error.log
