@@ -5,6 +5,7 @@ module.exports = {
         'src/index.js'
     ],
     themeConfig: {
-        navbar: false
+        search: false,
+        repo: 'eFrane/vuepress-plugin-mermaidjs'
     }
 }
