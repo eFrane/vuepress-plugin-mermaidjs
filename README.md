@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/vuepress-plugin-mermaidjs.svg)](https://badge.fury.io/js/vuepress-plugin-mermaidjs)
+
 # VuePress Plugin for mermaid.js
 
 > Use mermaid.js Diagrams in VuePress
@@ -33,14 +35,8 @@ module.exports = {
 
 ## Usage
 
-The plugin can convert the code block with language name 'mermaid' to a block surrounded by `<mermaid>`-Tag
-and handles the renderingof valid mermaid graph descriptions.
-
-    ``` mermaid
-    graph TD
-    mermaid-->isAwesome
-    isAwesome-->mermaid
-    ```
+The recommended usage is to place your mermaidjs diagrams inside
+a fenced code block with the language 'mermaid':
 
     ``` mermaid
     sequenceDiagram
@@ -50,18 +46,9 @@ and handles the renderingof valid mermaid graph descriptions.
     end
     ```
 
-or (Not recommended)
-
-``` markdown
-<mermaid>
-graph TD
-mermaid-->isAwesome
-isAwesome-->mermaid
-</mermaid>
-
-```
-
-**Extended documentation may be found at [vuepress-plugin-mermaidjs.efrane.com](https://vuepress-plugin-mermaidjs.efrane.com)**
+More on the usage and other documentation may be found at
+[vuepress-plugin-mermaidjs.efrane.com][3].
 
 [1]: https://vuepress.vuejs.org
 [2]: https://mermaidjs.github.io
+[3]: https://vuepress-plugin-mermaidjs.efrane.com
