@@ -33,8 +33,24 @@ module.exports = {
 
 ## Usage
 
-The plugin provides the `<mermaid>`-Tag and handles the rendering
-of valid mermaid graph descriptions.
+The plugin can convert the code block with language name 'mermaid' to a block surrounded by `<mermaid>`-Tag
+and handles the renderingof valid mermaid graph descriptions.
+
+    ``` mermaid
+    graph TD
+    mermaid-->isAwesome
+    isAwesome-->mermaid
+    ```
+
+    ``` mermaid
+    sequenceDiagram
+    Alice->John: Hello John, how are you?
+    loop every minute
+        John-->Alice: Great!
+    end
+    ```
+
+or (Not recommended)
 
 ``` markdown
 <mermaid>
@@ -42,6 +58,7 @@ graph TD
 mermaid-->isAwesome
 isAwesome-->mermaid
 </mermaid>
+
 ```
 
 **Extended documentation may be found at [vuepress-plugin-mermaidjs.efrane.com](https://vuepress-plugin-mermaidjs.efrane.com)**
