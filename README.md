@@ -38,7 +38,7 @@ module.exports = {
 The recommended usage is to place your mermaidjs diagrams inside
 a fenced code block with the language 'mermaid':
 
-    ``` mermaid
+    ```mermaid
     sequenceDiagram
     Alice->John: Hello John, how are you?
     loop every minute
