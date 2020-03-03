@@ -42,6 +42,21 @@ If you're looking for an easier time creating your diagrams,
 have a look at mermaid's [live editor][mle]!
 :::
 
+## Options
+
+If you want to configure Mermaid further, options given
+to the plugin are passed through to Mermaid:
+
+``` js
+module.exports = {
+    // ...
+    plugins: [
+        [ 'vuepress-plugin-mermaidjs', { gantt: { barHeight: 40 }}]
+    ]
+    // ...
+}
+```
+
 ## Fenced code block syntax
 
 The plugin provides mermaidjs diagram rendering for fenced code blocks

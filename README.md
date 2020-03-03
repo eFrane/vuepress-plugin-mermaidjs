@@ -7,6 +7,8 @@
 This [VuePress][1] plugin provides a global component wrapping [mermaid.js][2].
 The plugin is designed to work with VuePress v1.x.
 
+Main documentation site is at [vuepress-plugin-mermaidjs.efrane.com][3].
+
 ## Installation
 
 You can install it with
@@ -33,18 +35,6 @@ module.exports = {
 }
 ```
 
-Or you can pass options from mermaid
-
-``` js
-module.exports = {
-    // ...
-    plugins: [
-        [ 'vuepress-plugin-mermaidjs', { gantt: { barHeight: 40 }}]
-    ]
-    // ...
-}
-```
-
 ## Usage
 
 The recommended usage is to place your mermaidjs diagrams inside
@@ -57,9 +47,6 @@ a fenced code block with the language 'mermaid':
         John-->Alice: Great!
     end
     ```
-
-More on the usage and other documentation may be found at
-[vuepress-plugin-mermaidjs.efrane.com][3].
 
 [1]: https://vuepress.vuejs.org
 [2]: https://mermaidjs.github.io
