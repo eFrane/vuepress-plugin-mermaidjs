@@ -33,6 +33,18 @@ module.exports = {
 }
 ```
 
+Or you can pass options from mermaid
+
+``` js
+module.exports = {
+    // ...
+    plugins: [
+        [ 'vuepress-plugin-mermaidjs', { gantt: { barHeight: 40 }}]
+    ]
+    // ...
+}
+```
+
 ## Usage
 
 The recommended usage is to place your mermaidjs diagrams inside

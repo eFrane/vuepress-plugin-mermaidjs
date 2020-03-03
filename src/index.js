@@ -2,6 +2,9 @@ const path = require('path')
 
 module.exports = (options, ctx) => {
   return {
+    define: {
+      MERMAID_OPTIONS: options
+    },
     extendMarkdown: md => {
       const fence = md.renderer.rules.fence;
       md.renderer.rules.fence = (...args) => {
