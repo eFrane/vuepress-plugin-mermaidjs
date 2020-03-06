@@ -1,51 +1,44 @@
-// Since this plugin's component can be used multiple times, we need to
-// give each generated diagram a uid or the previous diagram would be
-// overwritten.
-let graphIdCounter = 0
+import mermaid from 'mermaid/dist/mermaid'
 
 const Mermaid = {
     name: 'Mermaid',
+    props: {
+        id: {
+            type: String,
+            required: true
+        },
+        graph: {
+            type: String,
+            required: true
+        },
+    },
     data() {
-        let graph = ''
-        if (this.$slots.default) {
-            graph = this.$slots.default[0].text
-        }
-
         return {
-            svg: undefined,
-            graph
+            svg: undefined
         }
     },
     render(h) {
+        if (this.svg === undefined) {
+            return h('noscript', 'Enable JavaScript to view graph.')
+        }
         return h('div', { domProps: { innerHTML: this.svg }})
     },
-    methods: {
-        renderSVG () {
-            import('mermaid/dist/mermaid').then(mermaid => {
-                mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
-
-                let renderDiv = document.createElement('div')
-                document.body.appendChild(renderDiv)
-
-                mermaid.render(
-                    'mermaid' + ++graphIdCounter,
-                    this.graph,
-                    (svg) => {
-                        this.svg = svg
-                        document.body.removeChild(renderDiv)
-                    },
-                    renderDiv
-                )
-            })
-        }
-    },
-    mounted () {
-        if (0 < this.graph.length) {
-            this.renderSVG()
-        }
+    mounted() {
+        mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
+        let renderDiv = document.createElement('div')
+        document.body.appendChild(renderDiv)
+        mermaid.render(
+            this.id,
+            this.graph,
+            (svg) => {
+                this.svg = svg
+                document.body.removeChild(renderDiv)
+            },
+            renderDiv
+        )
     }
 }
 
 export default ({ Vue }) => {
-    Vue.component('mermaid', Mermaid)
+    Vue.component('Mermaid', Mermaid)
 }
