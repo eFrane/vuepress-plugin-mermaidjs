@@ -10,7 +10,7 @@ module.exports = function mermaidjsPlugin (md, options = {}) {
       const [tokens, idx] = args
       const { info } = tokens[idx]
       if (info.trim(' ') === 'mermaid') {
-        return render(tokens, idx)
+        return mermaidRender(tokens, idx)
       }
       const rawCode = fence(...args)
       return `${rawCode}`
@@ -23,7 +23,8 @@ module.exports = function mermaidjsPlugin (md, options = {}) {
   const closeMarker = options.closeMarker || '</mermaid>'
   const closeChar = closeMarker.charCodeAt(0)
 
-  function render (tokens, idx, options, env, self) {
+  // Takes the context of the parsed section and turns in into a Mermaid component
+  function mermaidRender (tokens, idx, options, env, self) {
     const token = tokens[idx]
     const key = `mermaid_${hash(idx)}`
     const { content } = token
@@ -31,7 +32,8 @@ module.exports = function mermaidjsPlugin (md, options = {}) {
     return `<Mermaid id="${key}" :graph="$dataBlock.${key}"></Mermaid>`
   }
 
-  function uml (state, startLine, endLine, silent) {
+  // Finds mermaid sections in the Markdown and creates context
+  function mermaidReplacer(state, startLine, endLine, silent) {
     let nextLine
     let i
     let autoClosed = false
@@ -129,9 +131,10 @@ module.exports = function mermaidjsPlugin (md, options = {}) {
     return true
   }
 
-  md.block.ruler.before('fence', 'mermaidjs', uml, {
+  // See https://markdown-it.github.io/markdown-it/#Ruler.before
+  md.block.ruler.before('fence', 'mermaidjs', mermaidReplacer, {
     alt: ['paragraph', 'reference', 'blockquote', 'list']
   })
 
-  md.renderer.rules.mermaidjs = render
+  md.renderer.rules.mermaidjs = mermaidRender
 }
