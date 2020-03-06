@@ -1,5 +1,3 @@
-import mermaid from 'mermaid/dist/mermaid'
-
 const Mermaid = {
     name: 'Mermaid',
     props: {
@@ -24,18 +22,22 @@ const Mermaid = {
         return h('div', { domProps: { innerHTML: this.svg }})
     },
     mounted() {
-        mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
-        let renderDiv = document.createElement('div')
-        document.body.appendChild(renderDiv)
-        mermaid.render(
-            this.id,
-            this.graph,
-            (svg) => {
-                this.svg = svg
-                document.body.removeChild(renderDiv)
-            },
-            renderDiv
-        )
+        import('mermaid/dist/mermaid').then(mermaid => {
+            mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
+
+            let renderDiv = document.createElement('div')
+            document.body.appendChild(renderDiv)
+
+            mermaid.render(
+                this.id,
+                this.graph,
+                (svg) => {
+                    this.svg = svg
+                    document.body.removeChild(renderDiv)
+                },
+                renderDiv
+            )
+        })
     }
 }
 
