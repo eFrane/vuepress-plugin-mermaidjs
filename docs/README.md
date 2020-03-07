@@ -51,7 +51,7 @@ to the plugin are passed through to Mermaid:
 module.exports = {
     // ...
     plugins: [
-        [ 'vuepress-plugin-mermaidjs', { gantt: { barHeight: 40 }}]
+        [ 'mermaidjs', { gantt: { barHeight: 40 }}]
     ]
     // ...
 }
