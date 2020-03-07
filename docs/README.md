@@ -96,9 +96,6 @@ to a diagram, e.g. for aligning it on the page.
 
 # Known Caveats
 
-- Hot-Reloading does not work all-to-well with the
-rendering engine. If you have any ideas, please open
-a [Pull Request][pr]!
 - Some VuePress configurations don't seem to work
   well with a minified version of mermaid, there
   is an [issue][#5] for ideas.
