@@ -1,3 +1,5 @@
+import Loading from './Loading.vue'
+
 const Mermaid = {
     name: 'Mermaid',
     props: {
@@ -10,18 +12,19 @@ const Mermaid = {
             required: true
         },
     },
-    data() {
+    data () {
         return {
             svg: undefined
         }
     },
-    render(h) {
+    render (h) {
         if (this.svg === undefined) {
-            return h('noscript', 'Enable JavaScript to view graph.')
+            return h('Loading')
         }
+
         return h('div', { domProps: { innerHTML: this.svg }})
     },
-    mounted() {
+    mounted () {
         import('mermaid/dist/mermaid.min').then(mermaid => {
             mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
 
@@ -38,6 +41,9 @@ const Mermaid = {
                 renderDiv
             )
         })
+    },
+    components: {
+        Loading
     }
 }
 
