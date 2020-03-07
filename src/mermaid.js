@@ -22,7 +22,7 @@ const Mermaid = {
         return h('div', { domProps: { innerHTML: this.svg }})
     },
     mounted() {
-        import('mermaid/dist/mermaid').then(mermaid => {
+        import('mermaid/dist/mermaid.min').then(mermaid => {
             mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
 
             let renderDiv = document.createElement('div')
