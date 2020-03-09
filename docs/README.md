@@ -96,10 +96,6 @@ to a diagram, e.g. for aligning it on the page.
 
 # Known Caveats
 
-- Some VuePress configurations don't seem to work
-  well with a minified version of mermaid, there
-  is an [issue][#5] for ideas.
+_None currently_
 
 [mle]: https://mermaidjs.github.io/mermaid-live-editor/
-[pr]: https://github.com/eFrane/vuepress-plugin-mermaidjs/pulls
-[#5]:https://github.com/eFrane/vuepress-plugin-mermaidjs/issues/5
