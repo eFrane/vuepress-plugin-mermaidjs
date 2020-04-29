@@ -18,8 +18,12 @@
   "dependencies": {
     "mermaid": "^8.5.0"
   },
-  "private": false,
   "devDependencies": {
-    "vuepress": "^1.2.0"
+    "vuepress": "^1.3.0"
+  },
+  "private": false,
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   }
 }
