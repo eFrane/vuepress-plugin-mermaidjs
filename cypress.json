@@ -1,0 +1,15 @@
+{
+    "integrationFolder": "tests/cypress/integration",
+    "fixturesFolder": "tests/cypress/fixtures",
+    "pluginsFile": "tests/cypress/plugins/index.js",
+    "supportFile": "tests/cypress/support/index.js",
+    "screenshotsFolder": "tests/cypress/screenshots",
+    "videosFolder": "tests/cypress/videos",
+
+    "baseUrl": "http://localhost:8080/",
+
+    "ignoreTestFiles": [
+        "**/__snapshots__/*",
+        "**/__image_snapshots__/*"
+    ]
+}
