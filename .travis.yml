@@ -1,5 +1,7 @@
 language: node_js
 
+before_script: npx cypress install
+
 cache:
   - node_modules
   - $HOME/.cache/Cypress
