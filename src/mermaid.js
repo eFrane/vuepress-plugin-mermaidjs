@@ -22,7 +22,12 @@ const Mermaid = {
             return h('Loading')
         }
 
-        return h('div', { domProps: { innerHTML: this.svg }})
+        return h('div', {
+            domProps: {
+                innerHTML: this.svg,
+                style: 'width: 100%'
+            }
+        })
     },
     mounted () {
         import('mermaid/dist/mermaid.min').then(mermaid => {
