@@ -21,6 +21,7 @@
   "devDependencies": {
     "cypress": "^4.11.0",
     "cypress-plugin-snapshots": "^1.4.3",
+    "js-base64": "2.5.2",
     "start-server-and-test": "^1.11.0",
     "vuepress": "^1.5.2"
   },
