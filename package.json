@@ -23,7 +23,7 @@
     "cypress-plugin-snapshots": "^1.4.3",
     "js-base64": "2.6.4",
     "start-server-and-test": "^1.11.2",
-    "vuepress": "^1.5.2"
+    "vuepress": "^1.5.3"
   },
   "private": false,
   "scripts": {
