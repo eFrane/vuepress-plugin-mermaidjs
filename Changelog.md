@@ -1,3 +1,9 @@
+v1.8.0 / 2020-09-07
+==================
+
+  * Update mermaid requirement from ^8.7.0 to ^8.8.0
+  * Fix package.json homepage key
+
 v1.7.2 / 2020-08-24
 ===================
 
