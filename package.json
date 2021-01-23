@@ -16,7 +16,7 @@
     "plugin"
   ],
   "dependencies": {
-    "mermaid": "^8.8.4"
+    "mermaid": "^8.9.0"
   },
   "devDependencies": {
     "cypress": "^4.12.1",
