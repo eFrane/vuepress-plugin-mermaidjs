@@ -1,7 +1,0 @@
-{
-    "private": true,
-    "devDependencies": {
-        "@vuepress/shared-utils": "^1.8.0",
-        "vuepress": "^1.8.0"
-    }
-}
