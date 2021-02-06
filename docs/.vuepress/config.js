@@ -2,7 +2,7 @@ module.exports = {
     title: 'vuepress-plugin-mermaidjs',
     description: 'Easy Diagramming for VuePress with mermaidjs',
     plugins: [
-        'src/index.js'
+        '../src/index.js'
     ],
     themeConfig: {
         search: false,
