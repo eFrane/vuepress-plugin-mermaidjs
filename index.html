@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vuepress-plugin-mermaidjs</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="Easy Diagramming for VuePress with mermaidjs">
+    
+    <link rel="preload" href="/assets/css/0.styles.d39084ab.css" as="style"><link rel="preload" href="/assets/js/app.fef1e56e.js" as="script"><link rel="preload" href="/assets/js/2.cd7d149b.js" as="script"><link rel="preload" href="/assets/js/7.4dea03c9.js" as="script"><link rel="prefetch" href="/assets/js/3.6af389b6.js"><link rel="prefetch" href="/assets/js/4.f0f42579.js"><link rel="prefetch" href="/assets/js/5.a46787a7.js"><link rel="prefetch" href="/assets/js/6.37089320.js"><link rel="prefetch" href="/assets/js/8.e6de50c9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d39084ab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" aria-current="page" class="home-link router-link-exact-active router-link-active"><!----> <span class="site-name">vuepress-plugin-mermaidjs</span></a> <div class="links"><!----> <nav class="nav-links can-hide"> <a href="https://github.com/eFrane/vuepress-plugin-mermaidjs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/eFrane/vuepress-plugin-mermaidjs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main aria-labelledby="main-title" class="home"><header class="hero"><!----> <h1 id="main-title">
+      mermaid Plugin for VuePress
+    </h1> <p class="description">
+      Easy diagramming in your documentation/blog/whatever. Requires VuePress 1.x
+    </p> <!----></header> <!----> <div class="theme-default-content custom content__default"><h1 id="installation"><a href="#installation" class="header-anchor">#</a> Installation</h1> <p>Install it with your package manager of choice:</p> <p><strong>npm</strong>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">npm</span> <span class="token function">install</span> --save-dev vuepress-plugin-mermaidjs
+</code></pre></div><p><strong>yarn</strong>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">yarn</span> <span class="token function">add</span> -D vuepress-plugin-mermaidjs
+</code></pre></div><p>Add it to the plugin listing of your vuepress config:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .vuepress/config.js</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">'mermaidjs'</span>
+    <span class="token punctuation">]</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h1 id="usage"><a href="#usage" class="header-anchor">#</a> Usage</h1> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>If you're looking for an easier time creating your diagrams,
+have a look at mermaid's <a href="https://mermaidjs.github.io/mermaid-live-editor/" target="_blank" rel="noopener noreferrer">live editor<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>!</p></div> <h2 id="options"><a href="#options" class="header-anchor">#</a> Options</h2> <p>If you want to configure Mermaid further, options given
+to the plugin are passed through to Mermaid:</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">[</span> <span class="token string">'mermaidjs'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> gantt<span class="token operator">:</span> <span class="token punctuation">{</span> barHeight<span class="token operator">:</span> <span class="token number">40</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token punctuation">]</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="fenced-code-block-syntax"><a href="#fenced-code-block-syntax" class="header-anchor">#</a> Fenced code block syntax</h2> <p>The plugin provides mermaidjs diagram rendering for fenced code blocks
+with language name 'mermaid':</p> <div class="language- extra-class"><pre><code>``` mermaid
+sequenceDiagram
+Alice-&gt;John: Hello John, how are you?
+loop every minute
+    John--&gt;Alice: Great!
+end
+```
+</code></pre></div><h2 id="tag-syntax-not-recommended"><a href="#tag-syntax-not-recommended" class="header-anchor">#</a> Tag Syntax (not recommended)</h2> <p>If you really don't want to use the code block syntax
+this plugin also supports using a tag wrapper
+for mermaidjs-diagrams like so:</p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mermaid</span><span class="token punctuation">&gt;</span></span>
+graph lR
+Documentation--with diagrams--&gt;_[is Awesome]
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mermaid</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>yielding:
+<mermaid>
+graph LR
+Documentation--with diagrams--&gt;_[is Awesome]
+</mermaid></p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>The tag-syntax can be useful if you want to attach additional CSS-classes
+to a diagram, e.g. for aligning it on the page.</p></div> <h1 id="known-caveats"><a href="#known-caveats" class="header-anchor">#</a> Known Caveats</h1> <p><em>None currently</em></p></div> <div class="footer">
+    MIT Licensed | Copyright © 2019-present Stefan &quot;eFrane&quot; Graupner
+  </div></main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fef1e56e.js" defer></script><script src="/assets/js/2.cd7d149b.js" defer></script><script src="/assets/js/7.4dea03c9.js" defer></script>
+  </body>
+</html>
