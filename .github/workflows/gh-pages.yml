@@ -23,7 +23,7 @@ jobs:
         restore-keys: ${{ runner.os }}-build-node-
 
     - name: "Install documentation dependencies"
-      run: yarn --cwd docs install --frozen-lockfile --prefer-offline
+      run: yarn --cwd docs install --frozen-lockfile
 
     - name: "Build documentation"
       run: yarn --cwd docs vuepress build .
