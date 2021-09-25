@@ -1,15 +1,20 @@
 const path = require('path')
+const markdownItPlugin = require("./markdownItPlugin")
 
-module.exports = (options, ctx) => {
+/**
+ * @type {import("vuepress").PluginFunction}
+ */
+const vuePressPluginMermaid = (options, ctx) => {
   return {
+    name: 'MermaidJSPlugin',
     define: {
       MERMAID_OPTIONS: options
     },
-    chainMarkdown (config) {
-      config
-        .plugin('mermaidjs')
-        .use(require('./markdownItPlugin'))
+    extendsMarkdown(md) {
+      md.use(markdownItPlugin)
     },
-    enhanceAppFiles: path.resolve(__dirname, 'mermaid.js')
+    clientAppEnhanceFiles: path.resolve(__dirname, 'mermaid.js')
   }
 }
+
+module.exports = vuePressPluginMermaid

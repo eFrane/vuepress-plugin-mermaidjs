@@ -1,4 +1,6 @@
 import Loading from './Loading.vue'
+import { defineClientAppEnhance } from "@vuepress/client";
+import { h } from "vue";
 
 const Mermaid = {
     name: 'Mermaid',
@@ -17,16 +19,14 @@ const Mermaid = {
             svg: undefined
         }
     },
-    render (h) {
+    render() {
         if (this.svg === undefined) {
             return h('Loading')
         }
 
         return h('div', {
-            domProps: {
-                innerHTML: this.svg,
-                style: 'width: 100%'
-            }
+            innerHTML: this.svg,
+            style: 'width: 100%'
         })
     },
     mounted () {
@@ -35,7 +35,6 @@ const Mermaid = {
 
             let renderDiv = document.createElement('div')
             document.body.appendChild(renderDiv)
-
             mermaid.render(
                 this.id,
                 this.graph,
@@ -52,6 +51,6 @@ const Mermaid = {
     }
 }
 
-export default ({ Vue }) => {
-    Vue.component('Mermaid', Mermaid)
-}
+export default defineClientAppEnhance(({ app }) => {
+    app.component('Mermaid', Mermaid)
+})

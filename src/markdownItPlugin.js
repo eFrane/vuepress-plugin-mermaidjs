@@ -1,6 +1,6 @@
 // Inspired by https://github.com/ulivz/vuepress-plugin-flowchart
 
-const { hash } = require('@vuepress/shared-utils')
+const { hash } = require('@vuepress/utils')
 
 module.exports = function mermaidjsPlugin (md, options = {}) {
 
@@ -28,8 +28,9 @@ module.exports = function mermaidjsPlugin (md, options = {}) {
     const token = tokens[idx]
     const key = `mermaid_${hash(idx)}`
     const { content } = token
-    md.$dataBlock[key] = content
-    return `<Mermaid id="${key}" :graph="$dataBlock.${key}"></Mermaid>`
+    // md.$dataBlock[key] = content
+    // return `<Mermaid id="${key}" :graph="$dataBlock.${key}"></Mermaid>`
+    return `<Mermaid id="${key}" graph="${content}"></Mermaid>`
   }
 
   // Finds mermaid sections in the Markdown and creates context
