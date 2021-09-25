@@ -1,2 +1,4 @@
 node_modules
 yarn.lock
+docs/.vuepress/.temp/
+docs/.vuepress/.cache/
