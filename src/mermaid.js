@@ -1,6 +1,6 @@
 import Loading from './Loading.vue'
-import { defineClientAppEnhance } from "@vuepress/client";
-import { h } from "vue";
+import { h, reactive, watchEffect } from "vue";
+import mermaid from "mermaid";
 
 const Mermaid = {
     name: 'Mermaid',
@@ -14,43 +14,34 @@ const Mermaid = {
             required: true
         },
     },
-    data () {
-        return {
+    setup(props) {
+        const state = reactive({
             svg: undefined
-        }
-    },
-    render() {
-        if (this.svg === undefined) {
-            return h('Loading')
-        }
-
-        return h('div', {
-            innerHTML: this.svg,
-            style: 'width: 100%'
         })
-    },
-    mounted () {
-        import('mermaid/dist/mermaid.min').then(mermaid => {
-            mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
 
-            let renderDiv = document.createElement('div')
-            document.body.appendChild(renderDiv)
+        watchEffect(() => {
             mermaid.render(
-                this.id,
-                this.graph,
+                props.id,
+                props.graph,
                 (svg) => {
-                    this.svg = svg
-                    document.body.removeChild(renderDiv)
+                    state.svg = svg
                 },
-                renderDiv
             )
         })
+
+        return () => {
+            return state.svg ? h('div', {
+                innerHTML: state.svg,
+                style: 'width: 100%'
+            }) : h(Loading)
+        }
     },
-    components: {
-        Loading
-    }
 }
 
-export default defineClientAppEnhance(({ app }) => {
+/**
+ * @type {import("@vuepress/client").ClientAppEnhance}
+ */
+export default ({ app }) => {
+    mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
     app.component('Mermaid', Mermaid)
-})
+}
