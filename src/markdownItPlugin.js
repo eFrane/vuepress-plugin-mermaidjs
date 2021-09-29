@@ -2,7 +2,9 @@
 
 const { hash } = require('@vuepress/utils')
 
-module.exports = function mermaidjsPlugin (md, options = {}) {
+const graphs = {}
+
+function mermaidjsPlugin(md, options = {}) {
 
   // Handle ```mermaid blocks
   const fence = md.renderer.rules.fence
@@ -28,9 +30,9 @@ module.exports = function mermaidjsPlugin (md, options = {}) {
     const token = tokens[idx]
     const key = `mermaid_${hash(idx)}`
     const { content } = token
-    // md.$dataBlock[key] = content
+    graphs[key] = content
     // return `<Mermaid id="${key}" :graph="$dataBlock.${key}"></Mermaid>`
-    return `<Mermaid id="${key}" graph="${content}"></Mermaid>`
+    return `<Mermaid id="${key}"></Mermaid>`
   }
 
   // Finds mermaid sections in the Markdown and creates context
@@ -138,4 +140,9 @@ module.exports = function mermaidjsPlugin (md, options = {}) {
   })
 
   md.renderer.rules.mermaidjs = mermaidRender
+}
+
+module.exports = {
+  graphs,
+  mermaidjsPlugin
 }

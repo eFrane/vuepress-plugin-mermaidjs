@@ -16,15 +16,16 @@
     "plugin"
   ],
   "dependencies": {
+    "@vuepress/client": "^2.0.0-beta.26",
     "@vuepress/utils": "^2.0.0-beta.25",
-    "mermaid": "^8.12.1"
+    "mermaid": "^8.12.1",
+    "vue": "^3.2.19"
   },
   "devDependencies": {
     "cypress": "^4.12.1",
     "cypress-plugin-snapshots": "^1.4.4",
     "js-base64": "2.6.4",
-    "start-server-and-test": "^1.14.0",
-    "vuepress": "^2.0.0-beta.26"
+    "start-server-and-test": "^1.14.0"
   },
   "private": false,
   "scripts": {

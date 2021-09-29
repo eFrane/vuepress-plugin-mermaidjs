@@ -1,5 +1,6 @@
 import Loading from './Loading.vue'
 import { h, reactive, watchEffect } from "vue";
+import { usePageData } from "@vuepress/client";
 import mermaid from "mermaid";
 
 const Mermaid = {
@@ -9,12 +10,10 @@ const Mermaid = {
             type: String,
             required: true
         },
-        graph: {
-            type: String,
-            required: true
-        },
     },
     setup(props) {
+        const dataRef = usePageData()
+
         const state = reactive({
             svg: undefined
         })
@@ -22,7 +21,7 @@ const Mermaid = {
         watchEffect(() => {
             mermaid.render(
                 props.id,
-                props.graph,
+                dataRef.value?.$graphs[props.id],
                 (svg) => {
                     state.svg = svg
                 },
