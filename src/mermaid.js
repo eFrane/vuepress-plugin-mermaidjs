@@ -1,31 +1,35 @@
 import Loading from './Loading.vue'
 import { h, reactive, watchEffect } from "vue";
-import { usePageData } from "@vuepress/client";
-import mermaid from "mermaid";
 
-const Mermaid = {
+import mermaidjs from "mermaid";
+
+export const Mermaid = {
     name: 'Mermaid',
     props: {
         id: {
             type: String,
             required: true
         },
+        graph: {
+            type: String,
+            required: true
+        }
     },
     setup(props) {
-        const dataRef = usePageData()
-
         const state = reactive({
             svg: undefined
         })
 
         watchEffect(() => {
-            mermaid.render(
-                props.id,
-                dataRef.value?.$graphs[props.id],
-                (svg) => {
-                    state.svg = svg
-                },
-            )
+            if (props.graph) {
+                mermaidjs.render(
+                    props.id,
+                    props.graph,
+                    (svg) => {
+                        state.svg = svg
+                    },
+                )
+            }
         })
 
         return () => {
@@ -35,12 +39,4 @@ const Mermaid = {
             }) : h(Loading)
         }
     },
-}
-
-/**
- * @type {import("@vuepress/client").ClientAppEnhance}
- */
-export default ({ app }) => {
-    mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
-    app.component('Mermaid', Mermaid)
 }

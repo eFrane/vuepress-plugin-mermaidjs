@@ -16,7 +16,6 @@
     "plugin"
   ],
   "dependencies": {
-    "@vuepress/client": "^2.0.0-beta.26",
     "@vuepress/utils": "^2.0.0-beta.25",
     "mermaid": "^8.12.1",
     "vue": "^3.2.19"

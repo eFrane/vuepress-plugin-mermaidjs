@@ -12,7 +12,7 @@ function mermaidjsPlugin(md, options = {}) {
       const [tokens, idx] = args
       const { info } = tokens[idx]
       if (info.trim(' ') === 'mermaid') {
-        return mermaidRender(tokens, idx)
+        return mermaidRender(...args)
       }
       const rawCode = fence(...args)
       return `${rawCode}`
@@ -27,11 +27,14 @@ function mermaidjsPlugin(md, options = {}) {
 
   // Takes the context of the parsed section and turns in into a Mermaid component
   function mermaidRender (tokens, idx, options, env, self) {
+    console.log(env)
     const token = tokens[idx]
     const key = `mermaid_${hash(idx)}`
     const { content } = token
-    graphs[key] = content
-    // return `<Mermaid id="${key}" :graph="$dataBlock.${key}"></Mermaid>`
+    const { filePathRelative } = env
+    if (filePathRelative) {
+      (graphs[filePathRelative] || (graphs[filePathRelative] = {}))[key] = content
+    }
     return `<Mermaid id="${key}"></Mermaid>`
   }
 
