@@ -2,13 +2,12 @@ const path = require('path')
 
 module.exports = (options, ctx) => {
   return {
+    name: 'vuepress-plugin-mermaidjs',
     define: {
       MERMAID_OPTIONS: options
     },
-    chainMarkdown (config) {
-      config
-        .plugin('mermaidjs')
-        .use(require('./markdownItPlugin'))
+    extendMarkdown (md) {
+      md.use(require('./markdownItPlugin'))
     },
     enhanceAppFiles: path.resolve(__dirname, 'mermaid.js')
   }
