@@ -1,3 +1,8 @@
+v1.9 / not yet released
+===================
+
+  * Simplify markdown-it plugin
+  * Fix <Mermaid>-Tags with default slots
 
 v1.8.1 / 2020-11-09
 ===================
