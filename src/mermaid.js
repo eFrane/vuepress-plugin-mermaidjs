@@ -5,16 +5,28 @@ const Mermaid = {
     props: {
         id: {
             type: String,
-            required: true
+            required: false,
+            default() {
+                return 'diagram_'+Date.now()
+            }
         },
         graph: {
             type: String,
-            required: true
-        },
+            required: false
+        }
     },
     data () {
         return {
             svg: undefined
+        }
+    },
+    computed: {
+        graphData() {
+            if (this.graph) {
+                return this.graph
+            }
+
+            return this.$slots.default[0].text
         }
     },
     render (h) {
@@ -33,17 +45,12 @@ const Mermaid = {
         import('mermaid/dist/mermaid.min').then(mermaid => {
             mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
 
-            let renderDiv = document.createElement('div')
-            document.body.appendChild(renderDiv)
-
             mermaid.render(
                 this.id,
-                this.graph,
+                this.graphData,
                 (svg) => {
                     this.svg = svg
-                    document.body.removeChild(renderDiv)
-                },
-                renderDiv
+                }
             )
         })
     },
@@ -53,5 +60,5 @@ const Mermaid = {
 }
 
 export default ({ Vue }) => {
-    Vue.component('Mermaid', Mermaid)
+    Vue.component(Mermaid.name, Mermaid)
 }
