@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "@mbalex99/markdown-it-fence": "^1.0.1",
-    "mermaid": "^8.12.1"
+    "mermaid": "^8.13.5"
   },
   "devDependencies": {
     "cypress": "^4.12.1",
