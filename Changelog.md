@@ -1,8 +1,10 @@
-v1.9 / not yet released
+v1.9 / 2021-12-22
 ===================
 
   * Simplify markdown-it plugin
   * Fix <Mermaid>-Tags with default slots
+  * Diagrams now get the `mermaid-diagram` class added to their surrounding container
+  * Update mermaid to ^8.13.6
 
 v1.8.1 / 2020-11-09
 ===================
@@ -60,4 +62,3 @@ v1.5.0 / 2020-04-25
 
 
 __This changelog starts at v1.4.0__
-
