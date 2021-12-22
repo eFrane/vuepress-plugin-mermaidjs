@@ -35,6 +35,7 @@ const Mermaid = {
         }
 
         return h('div', {
+            class: ['mermaid-diagram'],
             domProps: {
                 innerHTML: this.svg,
                 style: 'width: 100%'
