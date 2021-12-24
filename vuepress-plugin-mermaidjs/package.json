@@ -1,0 +1,27 @@
+{
+    "name": "vuepress-plugin-mermaidjs",
+    "version": "1.9.0",
+    "description": "A Vuepress plugin providing easy MermaidJS diagramming",
+    "main": "src/index.js",
+    "repository": "https://github.com/eFrane/vuepress-plugin-mermaidjs",
+    "author": "Stefan \"eFrane\" Graupner <efrane@meanderingsoul.com>",
+    "license": "MIT",
+    "homepage": "http://vuepress-plugin-mermaidjs.efrane.com",
+    "keywords": [
+      "documentation",
+      "vue",
+      "vuepress",
+      "mermaid",
+      "diagrams",
+      "plugin"
+    ],
+    "devDependencies": {
+      "vuepress": "^1.9.3"
+    },
+    "private": false,
+    "scripts": {
+      "test:setup-docs-server": "yarn vuepress build tests/vuepress && http-server tests/vuepress/.vuepress/dist",
+      "cypress:run": "cypress run",
+      "test": "start-server-and-test test:setup-docs-server http-get://127.0.0.1:8080 cypress:run"
+    }
+  }

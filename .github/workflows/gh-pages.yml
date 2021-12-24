@@ -18,7 +18,7 @@ jobs:
     - name: "Cache dependencies"
       uses: actions/cache@v2
       with:
-        path: docs/node_modules
+        path: node_modules
         key: ${{ runner.os }}build-node-${{ hashFiles('package.json') }}
         restore-keys: ${{ runner.os }}-build-node-
 
@@ -26,7 +26,7 @@ jobs:
       run: yarn install --frozen-lockfile
 
     - name: "Build documentation"
-      run: yarn vuepress build docs
+      run: yarn docs
 
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.7.3

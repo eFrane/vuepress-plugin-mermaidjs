@@ -1,0 +1,8 @@
+{
+    "name": "docs",
+    "version": "99.0.0",
+    "dependencies": {
+        "vuepress": "^1.9.3"
+    },
+    "private": true
+}

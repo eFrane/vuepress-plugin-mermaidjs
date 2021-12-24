@@ -1,4 +1,4 @@
 it('renders diagrams', () => {
-    cy.visit('/test-diagrams.html')
+    cy.visit('/')
     cy.get('#a-simple-one + .mermaid-diagram').toMatchImageSnapshot()
 })
