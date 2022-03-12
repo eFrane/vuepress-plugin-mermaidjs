@@ -16,7 +16,6 @@
     "plugin"
   ],
   "dependencies": {
-    "@mbalex99/markdown-it-fence": "^1.0.1",
     "mermaid": "^8.14.0"
   },
   "devDependencies": {
@@ -31,6 +30,7 @@
   "scripts": {
     "test:setup-docs-server": "yarn vuepress build docs && http-server docs/.vuepress/dist",
     "cypress:run": "cypress run",
-    "test": "start-server-and-test test:setup-docs-server http-get://127.0.0.1:8080 cypress:run"
+    "test": "start-server-and-test test:setup-docs-server http-get://127.0.0.1:8080 cypress:run",
+    "dev": "yarn vuepress dev docs"
   }
 }
