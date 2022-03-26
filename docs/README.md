@@ -60,39 +60,15 @@ module.exports = {
 ## Fenced code block syntax
 
 The plugin provides mermaidjs diagram rendering for fenced code blocks
-with language name 'mermaid':
+with language name `mermaid`:
 
-    ``` mermaid
-    sequenceDiagram
-    Alice->John: Hello John, how are you?
-    loop every minute
-        John-->Alice: Great!
-    end
-    ```
-
-## Tag Syntax (not recommended)
-
-If you really don't want to use the code block syntax
-this plugin also supports using a tag wrapper
-for mermaidjs-diagrams like so:
-
-``` md
-<mermaid>
-graph lR
-Documentation--with diagrams-->_[is Awesome]
-</mermaid>
+``` mermaid
+sequenceDiagram
+Alice->John: "Hello John, how are you?"
+loop every minute
+    John-->Alice: Great!
+end
 ```
-
-yielding:
-<mermaid>
-graph LR
-Documentation--with diagrams-->_[is Awesome]
-</mermaid>
-
-::: tip
-The tag-syntax can be useful if you want to attach additional CSS-classes
-to a diagram, e.g. for aligning it on the page.
-:::
 
 # Known Caveats
 
