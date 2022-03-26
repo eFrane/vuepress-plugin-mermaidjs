@@ -1,3 +1,4 @@
+import { h, watchEffect, reactive } from 'vue'
 import Loading from './Loading.vue'
 
 const Mermaid = {
@@ -12,7 +13,14 @@ const Mermaid = {
         },
         graph: {
             type: String,
-            required: false
+            required: true
+        },
+        style: {
+            type: Object,
+            required: false,
+            default() {
+                return {};
+            }
         }
     },
     data () {
@@ -20,46 +28,44 @@ const Mermaid = {
             svg: undefined
         }
     },
-    computed: {
-        graphData() {
-            if (this.graph) {
-                return this.graph
-            }
+    setup(props) {
+        const state = reactive({
+            svg: undefined
+        })
 
-            return this.$slots.default[0].text
-        }
-    },
-    render (h) {
-        if (this.svg === undefined) {
-            return h('Loading')
-        }
+        watchEffect(() => {
+            if (props.graph) {
+                import('mermaid/dist/mermaid.min').then(mermaid => {
+                    mermaid.initialize({
+                        startOnLoad: true, ...MERMAID_OPTIONS
+                    })
 
-        return h('div', {
-            class: ['mermaid-diagram'],
-            domProps: {
-                innerHTML: this.svg,
-                style: 'width: 100%'
+                    mermaid.render(
+                      props.id,
+                      decodeURIComponent(props.graph),
+                      (svg) => {
+                          state.svg = svg
+                      }
+                    )
+                })
             }
         })
-    },
-    mounted () {
-        import('mermaid/dist/mermaid.min').then(mermaid => {
-            mermaid.initialize({ startOnLoad: true, ...MERMAID_OPTIONS })
 
-            mermaid.render(
-                this.id,
-                this.graphData,
-                (svg) => {
-                    this.svg = svg
-                }
-            )
-        })
+        return () => {
+            const style = {
+                width: '100%',
+                ...props.style
+            }
+
+            return state.svg ? h('div', {
+                innerHTML: state.svg,
+                ...style
+            }) : h(Loading)
+        }
     },
     components: {
         Loading
     }
 }
 
-export default ({ Vue }) => {
-    Vue.component(Mermaid.name, Mermaid)
-}
+export { Mermaid }

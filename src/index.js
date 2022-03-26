@@ -6,9 +6,9 @@ module.exports = (options, ctx) => {
     define: {
       MERMAID_OPTIONS: options
     },
-    extendMarkdown (md) {
+    extendsMarkdown (md) {
       md.use(require('./markdownItPlugin'))
     },
-    enhanceAppFiles: path.resolve(__dirname, 'mermaid.js')
+    clientAppEnhanceFiles: path.resolve(__dirname, 'clientAppEnhance.js')
   }
 }

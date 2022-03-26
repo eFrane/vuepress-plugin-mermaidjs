@@ -7,10 +7,9 @@ module.exports = function mermaidjsPlugin (md) {
       const token = tokens[idx]
       const key = `mermaid_${hash(idx)}`
       const { content } = token
-      
-      md.$dataBlock[key] = content
-  
-      return `<Mermaid id="${key}" :graph="$dataBlock.${key}"></Mermaid>`
+
+      let encoded = encodeURIComponent(content)
+      return `<Mermaid id="${key}" graph="${encoded}"></Mermaid>`
     },
     validate: (params) => {
       return params.trim().split(' ').includes('mermaid')
