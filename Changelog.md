@@ -1,3 +1,10 @@
+v2.0-beta.1 / UNRELEASED
+=================
+
+  *  **BREAKING** This version drops support for VuePress 1.x.
+  *  **BREAKING** The component-style diagram instantiation no longer works.
+  *  Migrated to Vue 3 / Vuepress 2
+
 v1.9.1 / 2022-03-12
 ===================
 

@@ -12,6 +12,8 @@ Main documentation site is at [vuepress-plugin-mermaidjs.efrane.com][3].
 
 ## Installation
 
+**VuePress 2 Support is currently in beta testing, see [below](#vuepress-2-support).**
+
 You can install it with
 
 ``` shell
@@ -48,6 +50,11 @@ a fenced code block with the language 'mermaid':
         John-->Alice: Great!
     end
     ```
+
+## VuePress 2 Support
+
+You can use this plugin with the upcoming (`next`) release of VuePress
+aka VuePress 2. To do so, use version `2.0-beta.1` or above. 
 
 [1]: https://vuepress.vuejs.org
 [2]: https://mermaidjs.github.io
