@@ -1,4 +1,9 @@
-v2.0-beta.1 / 2022-03-26
+v2.0.0-beta.2 / 2022-03-27
+================
+
+  * Fix dependencies
+
+v2.0.0-beta.1 / 2022-03-26
 =================
 
   *  **BREAKING** This version drops support for VuePress 1.x.
