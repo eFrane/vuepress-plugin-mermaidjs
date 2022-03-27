@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: 'mermaid Plugin for VuePress'
-tagline: 'Easy diagramming in your documentation/blog/whatever. Requires VuePress 1.x'
+tagline: 'Easy diagramming in your documentation/blog/whatever. Works with VuePress 1.x and 2.x'
 footer: MIT Licensed | Copyright © 2019-present Stefan "eFrane" Graupner
 ---
 
