@@ -26,6 +26,8 @@ const Mermaid = {
                 return this.graph
             }
 
+            console.warn('Using vuepress-plugin-mermaidjs via the default slot is deprecated and will be removed in v2.0.')
+
             return this.$slots.default[0].text
         }
     },

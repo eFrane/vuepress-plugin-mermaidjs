@@ -70,7 +70,14 @@ with language name 'mermaid':
     end
     ```
 
-## Tag Syntax (not recommended)
+## Tag Syntax (deprecated)
+
+::: warning
+The tag syntax will be removed in v2.0.
+Support for adding custom styles is not yet available in
+the current beta versions of v2.0 but is planned to be
+[re-added](https://github.com/eFrane/vuepress-plugin-mermaidjs/issues/101).
+:::
 
 If you really don't want to use the code block syntax
 this plugin also supports using a tag wrapper
